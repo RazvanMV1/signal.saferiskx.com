@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: signals_db
+      POSTGRES_USER: saferiskx
+      POSTGRES_PASSWORD: saferiskxpass
+    ports:
+      - "5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  server:
+    build: ./server
+    environment:
+      DB_HOST: db
+      DB_USER: saferiskx
+      DB_PASS: saferiskxpass
+      DB_NAME: signals_db
+      JWT_SECRET: change_this_in_production
+    ports:
+      - "5002:5002"
+    depends_on:
+      - db
+    volumes:
+      - ./server:/usr/src/app
+  client:
+    build: ./client
+    ports:
+      - "3001:3000"
+    environment:
+      - REACT_APP_API_URL=http://localhost:5001
+
+volumes:
+  db-data:
