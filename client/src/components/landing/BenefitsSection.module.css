@@ -1,0 +1,77 @@
+.benefitsSection {
+  padding: 60px 0 35px 0;
+  background: linear-gradient(90deg, #fff 60%, #f7f9fb 100%);
+  text-align: center;
+}
+
+.title {
+  color: #1976d2;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 34px;
+  letter-spacing: 1px;
+}
+
+.cards {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--color-card, #fff);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #1976d222;
+  padding: 34px 22px 27px 22px;
+  width: 260px;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.19s, transform 0.16s;
+  animation: fadeInUp 0.55s cubic-bezier(.28,.8,.32,1.25) both;
+}
+
+.card:hover {
+  box-shadow: 0 6px 36px #1976d244;
+  transform: translateY(-4px) scale(1.045);
+}
+
+.icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  color: #1976d2;
+}
+
+.cardTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #032858;
+  margin-bottom: 10px;
+  letter-spacing: 0.6px;
+}
+
+.cardDesc {
+  color: #555;
+  font-size: 1rem;
+  opacity: 0.93;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(22px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 17px;
+  }
+  .card {
+    width: 98vw;
+    min-width: 0;
+    padding: 24px 8px 18px 8px;
+  }
+}

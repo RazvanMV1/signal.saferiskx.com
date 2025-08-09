@@ -1,0 +1,92 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding: 60px 10px 48px 10px;
+  background: linear-gradient(110deg, #1976d2 65%, #032858 100%);
+  border-radius: 0 0 32px 32px;
+  overflow: hidden;
+}
+.heroContent {
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  animation: fadeInDown 0.8s cubic-bezier(.37,.92,.41,.97);
+}
+.heroLogo {
+  width: 68px;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 2px 8px #1976d2bb);
+}
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.brandAccent {
+  color: #32a8fb;
+  background: linear-gradient(90deg, #1976d2 60%, #32a8fb 100%);
+  padding: 2px 13px;
+  border-radius: 8px;
+  font-size: 2rem;
+  margin-left: 8px;
+  font-weight: 700;
+}
+
+.heroSubtitle {
+  font-size: 1.23rem;
+  margin-bottom: 30px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.93;
+}
+.ctaBtn {
+  display: inline-block;
+  background: linear-gradient(92deg, #1976d2 80%, #032858 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 13px 34px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px #1976d299;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.15s;
+  letter-spacing: 1px;
+  animation: fadeInUp 0.7s 0.4s both;
+}
+.ctaBtn:hover {
+  background: linear-gradient(92deg, #032858 80%, #1976d2 100%);
+  transform: scale(1.04);
+}
+
+/* Efect de gradient animat în background */
+.heroBg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 70% 30%, #32a8fb33 0%, transparent 70%),
+              radial-gradient(circle at 20% 80%, #1976d244 0%, transparent 60%);
+  z-index: 1;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-32px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(22px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+@media (max-width: 650px) {
+  .heroTitle { font-size: 1.28rem; }
+  .brandAccent { font-size: 1.1rem; padding: 2px 8px; }
+  .ctaBtn { font-size: 1rem; padding: 10px 17px;}
+  .hero { min-height: 220px; padding: 14px 2px 12px 2px; }
+  .heroLogo { width: 38px; }
+}
