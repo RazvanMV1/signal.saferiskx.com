@@ -1,0 +1,59 @@
+# Environment files (IMPORTANT pentru securitate)
+.env
+.env.*
+*.env
+
+# Node modules
+node_modules/
+*/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Docker
+.docker/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build directories
+build/
+dist/
+*/build/
+*/dist/
+
+# Backup files
+*.backup
+backup/
+backups/
+
+# SSL certificates (pentru producție)
+*.pem
+*.key
+*.crt
+ssl/

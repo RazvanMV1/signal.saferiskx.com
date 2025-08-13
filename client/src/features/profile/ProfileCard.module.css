@@ -1,0 +1,675 @@
+/* ProfileCard.module.css */
+
+/* Container principal */
+.profileCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 2px 16px #1976d222;
+  color: #032858;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: hidden;
+  transition: box-shadow 0.19s, transform 0.16s;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 1px solid #f7f9fb;
+  animation: fadeInUp 0.55s cubic-bezier(.28,.8,.32,1.25) both;
+}
+
+.profileCard:hover {
+  box-shadow: 0 6px 36px #1976d244;
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30px 25px 25px 25px;
+  background: #f7f9fb;
+  border-bottom: 1px solid #e3f0fb;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 15px #1976d233;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0; /* Pentru text overflow */
+}
+
+.userName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #032858;
+  word-wrap: break-word;
+  letter-spacing: 0.6px;
+}
+
+.userEmail {
+  font-size: 1rem;
+  color: #555;
+  opacity: 0.93;
+  margin-bottom: 5px;
+  word-wrap: break-word;
+}
+
+.memberSince {
+  font-size: 0.9rem;
+  color: #1976d2;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Profile Sections */
+.profileSection {
+  background: #f7f9fb;
+  margin: 20px 25px;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e3f0fb;
+}
+
+.sectionTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1976d2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.6px;
+}
+
+.sectionTitlel {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.6px;
+}
+
+/* Personal Info Display */
+.infoDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e3f0fb;
+}
+
+.infoItem:last-child {
+  border-bottom: none;
+}
+
+.infoLabel {
+  font-weight: 600;
+  color: #1976d2;
+  font-size: 14px;
+  min-width: 100px;
+}
+
+.infoValue {
+  color: #032858;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: right;
+  word-wrap: break-word;
+  max-width: 200px;
+}
+
+.editBtn {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.16s ease;
+  margin-top: 15px;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.editBtn:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px #1976d233;
+}
+
+/* Personal Info Edit Form */
+.infoEdit {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1976d2;
+}
+
+.inputGroup input {
+  padding: 12px 15px;
+  border: 2px solid #e3f0fb;
+  border-radius: 8px;
+  background: #fff;
+  color: #032858;
+  font-size: 14px;
+  transition: all 0.16s ease;
+}
+
+.inputGroup input::placeholder {
+  color: #999;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #1976d2;
+  background: #f7f9fb;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+}
+
+.editActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.saveBtn {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.16s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.saveBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px #1976d233;
+}
+
+.saveBtn:disabled {
+  background: linear-gradient(45deg, #6c757d, #5a6268);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cancelBtn {
+  background: #f7f9fb;
+  color: #1976d2;
+  border: 2px solid #e3f0fb;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.16s ease;
+  flex: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cancelBtn:hover {
+  background: #e3f0fb;
+  border-color: #1976d2;
+  transform: translateY(-2px);
+}
+
+/* Security Section */
+.securityActions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.securityItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e3f0fb;
+}
+
+.securityInfo h4 {
+  margin: 0 0 5px 0;
+  color: #032858;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.securityInfo p {
+  margin: 0;
+  color: #555;
+  opacity: 0.93;
+  font-size: 14px;
+}
+
+.actionButton {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.16s ease;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.actionButton:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px #1976d233;
+}
+
+/* Password Change Form */
+.passwordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e3f0fb;
+}
+
+.passwordActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Logout Section */
+.logoutSection {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  margin: 20px 25px 25px 25px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(220, 53, 69, 0.22);
+}
+
+.logoutSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="logout-grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23logout-grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.logoutContent {
+  position: relative;
+  z-index: 1;
+}
+
+.logoutDescription {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+  line-height: 1.5;
+  opacity: 0.93;
+}
+
+.logoutBtn {
+  background: white;
+  color: #1565c0;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.16s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logoutBtn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading States */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #1976d2;
+  min-height: 200px;
+}
+
+.loading span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Error States */
+.error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #032858;
+}
+
+.errorMessage {
+  color: #dc3545;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  background: rgba(220, 53, 69, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.retryBtn {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.16s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.retryBtn:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px #1976d233;
+}
+
+/* Spinner Animation */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f7f9fb;
+  border-top: 3px solid #1976d2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Professional Animation */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(22px) scale(0.98); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profileCard {
+    margin: 10px;
+    border-radius: 12px;
+    max-width: none;
+  }
+  
+  .header {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+  }
+  
+  .avatar {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 70px;
+    height: 70px;
+    font-size: 24px;
+  }
+  
+  .userName {
+    font-size: 1.3rem;
+  }
+  
+  .userEmail {
+    font-size: 0.9rem;
+  }
+  
+  .profileSection,
+  .logoutSection {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 15px;
+  }
+  
+  .sectionTitle {
+    font-size: 1rem;
+  }
+  
+  .securityItem {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .securityInfo {
+    text-align: center;
+  }
+  
+  .actionButton {
+    width: 100%;
+  }
+  
+  .editActions,
+  .passwordActions {
+    flex-direction: column;
+  }
+  
+  .infoItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .infoLabel {
+    min-width: auto;
+  }
+  
+  .infoValue {
+    text-align: left;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .profileCard {
+    margin: 5px;
+  }
+  
+  .header {
+    padding: 20px 15px;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+  
+  .userName {
+    font-size: 1.2rem;
+  }
+  
+  .userEmail {
+    font-size: 0.85rem;
+  }
+  
+  .profileSection,
+  .logoutSection {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 12px;
+  }
+  
+  .sectionTitle {
+    font-size: 0.95rem;
+  }
+  
+  .inputGroup input {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+  
+  .saveBtn,
+  .cancelBtn,
+  .actionButton,
+  .logoutBtn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Professional focus styles */
+.profileCard *:focus-visible {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .profileCard {
+    border: 2px solid #1976d2;
+  }
+  
+  .saveBtn,
+  .cancelBtn,
+  .actionButton,
+  .logoutBtn,
+  .editBtn,
+  .retryBtn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .profileCard,
+  .saveBtn,
+  .cancelBtn,
+  .actionButton,
+  .logoutBtn,
+  .editBtn,
+  .retryBtn {
+    transition: none;
+    animation: none;
+  }
+  
+  .profileCard:hover,
+  .saveBtn:hover:not(:disabled),
+  .cancelBtn:hover,
+  .actionButton:hover,
+  .logoutBtn:hover,
+  .editBtn:hover,
+  .retryBtn:hover {
+    transform: none;
+  }
+  
+  .spinner {
+    animation: none;
+  }
+}
+
+/* Smooth scrolling for long forms */
+.profileCard {
+  scroll-behavior: smooth;
+}
+
+/* Additional professional styling */
+.profileCard input[type="text"],
+.profileCard input[type="email"],
+.profileCard input[type="password"] {
+  font-family: inherit;
+}
+
+.profileCard button {
+  font-family: inherit;
+}
+
+/* Enhanced visual hierarchy */
+.sectionTitle::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  margin-right: 8px;
+  border-radius: 2px;
+}

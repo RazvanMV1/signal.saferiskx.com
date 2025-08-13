@@ -1,0 +1,872 @@
+/* Container principal */
+.discordCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 0;
+  box-shadow: 0 2px 16px #1976d222;
+  color: #032858;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow: hidden;
+  transition: box-shadow 0.19s, transform 0.16s;
+  max-width: 400px;
+  margin: 0 auto;
+  border: 1px solid #f7f9fb;
+  animation: fadeInUp 0.55s cubic-bezier(.28,.8,.32,1.25) both;
+}
+
+.discordCard:hover {
+  box-shadow: 0 6px 36px #1976d244;
+  transform: translateY(-4px) scale(1.045);
+}
+
+/* Header și Title */
+.title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 30px 20px 20px 20px;
+  color: #1976d2;
+  letter-spacing: 1px;
+}
+
+.activeHeader {
+  padding: 20px 20px 0 20px;
+  text-align: center;
+  background: #f7f9fb;
+}
+
+/* Status Badges */
+.statusBadge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.statusActive {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  box-shadow: 0 2px 10px #1976d233;
+}
+
+.statusInactive {
+  background-color: #ffc107;
+  color: #212529;
+  box-shadow: 0 2px 10px rgba(255, 193, 7, 0.3);
+}
+
+.statusCancelled {
+  background-color: #dc3545;
+  color: white;
+  box-shadow: 0 2px 10px rgba(220, 53, 69, 0.3);
+}
+
+.statusDefault {
+  background-color: #6c757d;
+  color: white;
+  box-shadow: 0 2px 10px rgba(108, 117, 125, 0.3);
+}
+
+/* Price Section */
+.price {
+  text-align: center;
+  margin: 20px 0 30px 0;
+  padding: 20px;
+  background: #f7f9fb;
+  border-radius: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.amount {
+  font-size: 48px;
+  font-weight: 800;
+  color: #1976d2;
+  text-shadow: none;
+}
+
+.currency {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+  opacity: 0.93;
+  margin-left: 5px;
+}
+
+/* Description */
+.description {
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  opacity: 0.93;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Features List */
+.features {
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+  color: #032858;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background: #f7f9fb;
+  border-radius: 8px;
+  transition: background-color 0.16s ease;
+}
+
+.feature:hover {
+  background: #e3f0fb;
+}
+
+.feature:last-child {
+  margin-bottom: 0;
+}
+
+/* Purchase Button */
+.purchaseBtn {
+  width: calc(100% - 40px);
+  margin: 0 20px 30px 20px;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px #1976d233;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.purchaseBtn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #1976d244;
+}
+
+.purchaseBtn:disabled {
+  background: linear-gradient(45deg, #6c757d, #5a6268);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+.purchaseBtn.purchasing {
+  background: linear-gradient(45deg, #6c757d, #5a6268);
+}
+
+/* Payment Information */
+.paymentInfo {
+  padding: 20px;
+  background: #f7f9fb;
+  margin: 20px 20px 20px 20px;
+  border-radius: 12px;
+  border: 1px solid #e3f0fb;
+}
+
+.nextPayment {
+  text-align: center;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1976d2;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.paymentDate {
+  font-size: 18px;
+  font-weight: 600;
+  color: #032858;
+  margin-bottom: 8px;
+}
+
+.paymentAmount {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1976d2;
+}
+
+/* Subscription Details */
+.subscriptionDetails {
+  background: #f7f9fb;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0 20px 20px 20px;
+  border: 1px solid #e3f0fb;
+}
+
+.detailItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e3f0fb;
+}
+
+.detailItem:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-weight: 500;
+  color: #1976d2;
+  font-size: 14px;
+}
+
+.detailValue {
+  color: #032858;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ✅ BILLING MANAGEMENT - Professional Theme */
+.billingSection {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  margin: 0 20px 20px 20px;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 16px #1976d222;
+}
+
+.billingSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="billing-grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23billing-grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.billingTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.6px;
+}
+
+.billingDescription {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 12px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+  opacity: 0.93;
+}
+
+.billingPortalBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #1976d2;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.16s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 200px;
+}
+
+.billingPortalBtn:hover:not(:disabled) {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: #1976d2;
+}
+
+.billingPortalBtn:disabled {
+  background: rgba(255, 255, 255, 0.7);
+  color: rgba(25, 118, 210, 0.7);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.billingError {
+  background: rgba(220, 53, 69, 0.2);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  color: #dc3545;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.billingError .errorText {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Discord Section - Professional Theme */
+.discordSection {
+  background: linear-gradient(135deg, #5865f2, #4752c4);
+  margin: 0 20px 20px 20px;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 16px #5865f222;
+}
+
+.discordSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.discordTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.6px;
+}
+
+.discordDescription {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 10px 0 20px 0;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+  opacity: 0.93;
+}
+
+/* Discord Connect/Disconnect Actions */
+.discordConnectBtn,
+.discordDisconnectBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  gap: 8px;
+}
+
+.discordConnectBtn {
+  background: white;
+  color: #5865f2;
+  margin-bottom: 15px;
+}
+
+.discordConnectBtn:hover:not(:disabled) {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.discordDisconnectBtn {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+  padding: 8px 16px;
+  margin-top: 10px;
+}
+
+.discordDisconnectBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.discordConnectBtn:disabled,
+.discordDisconnectBtn:disabled {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Discord Connected State */
+.discordConnected {
+  position: relative;
+  z-index: 1;
+}
+
+.discordInfo {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.discordUser {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.discordStatusDetail {
+  font-size: 13px;
+}
+
+.statusSuccess {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.statusPending {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.statusWarning {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.discordActions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pendingActions {
+  margin-bottom: 10px;
+}
+
+.pendingText {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.refreshBtn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.refreshBtn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.discordBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #5865f2;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.16s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.discordBtn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: #5865f2;
+}
+
+.discordBtn span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.discordError {
+  background: rgba(220, 53, 69, 0.2);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  color: #dc3545;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 13px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Loading States */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 60px 20px;
+  text-align: center;
+  color: #1976d2;
+  min-height: 200px;
+}
+
+.loading span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Error States */
+.error {
+  text-align: center;
+  padding: 40px 20px;
+  color: #032858;
+}
+
+.errorMessage {
+  color: #dc3545;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  background: rgba(220, 53, 69, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.retryBtn {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.16s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.retryBtn:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px #1976d233;
+}
+
+/* Purchase Error */
+.purchaseError {
+  background: rgba(220, 53, 69, 0.15);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  color: #dc3545;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 20px;
+  text-align: center;
+}
+
+.errorText {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Inactive/Cancelled States */
+.inactiveInfo {
+  text-align: center;
+  padding: 25px 20px;
+  margin: 20px;
+  border-radius: 12px;
+  background: #f7f9fb;
+  border: 1px solid #e3f0fb;
+}
+
+.inactiveText {
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  opacity: 0.93;
+}
+
+.expirationDate {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: rgba(255, 193, 7, 0.2);
+  border-radius: 8px;
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.reactivateBtn {
+  background: linear-gradient(135deg, #1976d2, #1565c0);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.16s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px #1976d233;
+}
+
+.reactivateBtn:hover {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px #1976d244;
+}
+
+/* Spinner Animation */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid #f7f9fb;
+  border-top: 3px solid #1976d2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Professional Animation */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(22px) scale(0.98); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .discordCard {
+    margin: 10px;
+    border-radius: 12px;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+    margin: 20px 15px 15px 15px;
+  }
+  
+  .amount {
+    font-size: 40px;
+  }
+  
+  .currency {
+    font-size: 16px;
+  }
+  
+  .description {
+    font-size: 15px;
+    padding: 0 15px;
+  }
+  
+  .features,
+  .paymentInfo,
+  .subscriptionDetails,
+  .discordSection,
+  .billingSection,
+  .inactiveInfo {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  
+  .purchaseBtn {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100% - 30px);
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+  
+  .billingPortalBtn {
+    padding: 12px 20px;
+    font-size: 14px;
+    min-width: 180px;
+  }
+  
+  .feature {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  
+  .discordTitle,
+  .billingTitle {
+    font-size: 1.15rem;
+  }
+  
+  .discordDescription,
+  .billingDescription {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .discordCard {
+    margin: 5px;
+  }
+  
+  .title {
+    font-size: 1.3rem;
+    margin: 15px 10px 10px 10px;
+  }
+  
+  .amount {
+    font-size: 36px;
+  }
+  
+  .paymentDate {
+    font-size: 16px;
+  }
+  
+  .paymentAmount {
+    font-size: 20px;
+  }
+  
+  .features,
+  .paymentInfo,
+  .subscriptionDetails,
+  .discordSection,
+  .billingSection,
+  .inactiveInfo {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 15px;
+  }
+  
+  .purchaseBtn {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+  }
+  
+  .billingPortalBtn {
+    padding: 10px 16px;
+    font-size: 13px;
+    min-width: 160px;
+  }
+}
+
+/* Professional focus styles */
+.discordCard *:focus-visible {
+  outline: 2px solid #1976d2;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .discordCard {
+    border: 2px solid #1976d2;
+  }
+  
+  .statusBadge,
+  .purchaseBtn,
+  .discordBtn,
+  .billingPortalBtn,
+  .retryBtn,
+  .reactivateBtn {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .discordCard,
+  .purchaseBtn,
+  .discordBtn,
+  .billingPortalBtn,
+  .retryBtn,
+  .reactivateBtn,
+  .feature {
+    transition: none;
+    animation: none;
+  }
+  
+  .discordCard:hover {
+    transform: none;
+  }
+  
+  .purchaseBtn:hover:not(:disabled),
+  .discordBtn:hover,
+  .billingPortalBtn:hover:not(:disabled),
+  .retryBtn:hover,
+  .reactivateBtn:hover {
+    transform: none;
+  }
+  
+  .spinner {
+    animation: none;
+  }
+}
