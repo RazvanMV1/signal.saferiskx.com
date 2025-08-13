@@ -4,30 +4,30 @@ import styles from './BenefitsSection.module.css';
 const benefits = [
   {
     icon: "⚡",
-    title: "Semnale rapide",
-    desc: "Primești semnale Forex & Crypto în timp real, direct pe Discord și în platformă."
+    title: "Real-Time Signals",
+    desc: "Receive premium Forex & Crypto trading signals instantly through Discord and our platform with lightning-fast execution."
   },
   {
     icon: "🛡️",
-    title: "Risk Management Pro",
-    desc: "Toate semnalele includ niveluri clare de risk, stop loss și take profit, fără promisiuni false."
+    title: "Professional Risk Management",
+    desc: "Every signal includes precise risk levels, stop loss, and take profit targets — no false promises, just professional trading guidance."
   },
   {
     icon: "📊",
-    title: "Statistici transparente",
-    desc: "Vezi performanța semnalelor, win rate și raport risk/reward — totul public și verificabil."
+    title: "Transparent Performance",
+    desc: "Access verified signal performance metrics, win rates, and risk-reward ratios — all publicly available and independently tracked."
   },
   {
     icon: "🤖",
-    title: "Acces instant",
-    desc: "Plătești cu cardul, primești acces instant la grupul premium Discord și la toate funcțiile SafeRiskX."
+    title: "Instant Premium Access",
+    desc: "Complete secure payment and gain immediate access to our exclusive Discord community and all SafeRiskX premium features."
   }
 ];
 
 export default function BenefitsSection() {
   return (
     <section className={styles.benefitsSection}>
-      <h2 className={styles.title}>De ce să alegi SafeRiskX Signals?</h2>
+      <h2 className={styles.title}>Why Choose SafeRiskX Premium Signals?</h2>
       <div className={styles.cards}>
         {benefits.map((b, idx) => (
           <div key={b.title} className={styles.card} style={{ animationDelay: `${idx * 0.15}s` }}>

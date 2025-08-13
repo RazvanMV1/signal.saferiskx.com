@@ -1,82 +1,395 @@
+/* HowItWorksSection.module.css */
+
 .howSection {
-  padding: 52px 0 34px 0;
-  background: #f7f9fb;
-  text-align: center;
-}
-
-.title {
-  color: #1976d2;
-  font-size: 1.34rem;
-  font-weight: 700;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-}
-
-.steps {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.step {
-  background: #fff;
-  border-radius: 13px;
-  box-shadow: 0 2px 10px #1976d211;
-  padding: 27px 22px 21px 22px;
-  width: 192px;
-  min-width: 150px;
+  padding: 8rem 2rem;
+  background: linear-gradient(135deg, #032858 0%, #1976d2 100%);
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeInUp 0.7s cubic-bezier(.37,.92,.41,.97) both;
+  overflow: hidden;
+  color: #ffffff;
 }
-.icon {
-  font-size: 2.2rem;
-  margin-bottom: 12px;
-  color: #1976d2;
-}
-.stepTitle {
-  font-size: 1.08rem;
-  font-weight: 700;
-  color: #032858;
-  margin-bottom: 7px;
-}
-.stepDesc {
-  color: #555;
-  font-size: 0.97rem;
-  opacity: 0.94;
-}
-.arrow {
+
+.howSection::before {
+  content: '';
   position: absolute;
-  right: -28px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2.1rem;
-  color: #1976d2;
-  font-weight: bold;
-  opacity: 0.32;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
   pointer-events: none;
 }
 
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(22px) scale(0.98);}
-  to   { opacity: 1; transform: translateY(0) scale(1);}
+.howSection::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Ccircle cx='7' cy='7' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
 }
 
-@media (max-width: 900px) {
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: start;
+  position: relative;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.28, 0.8, 0.32, 1.25);
+  animation: slideInUp 0.8s cubic-bezier(0.28, 0.8, 0.32, 1.25) forwards;
+  opacity: 0;
+  transform: translateY(40px);
+  overflow: hidden;
+}
+
+.step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.step:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.step:hover::before {
+  opacity: 1;
+}
+
+.stepNumber {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.9) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #032858;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.icon {
+  font-size: 3.5rem;
+  margin: 1.5rem 0 1.5rem 0;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s cubic-bezier(0.28, 0.8, 0.32, 1.25);
+}
+
+.step:hover .icon {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+.stepTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+.stepDesc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  z-index: 2;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.arrow svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.step:hover + .step .arrow,
+.step:hover .arrow {
+  opacity: 1;
+  transform: translateY(-50%) translateX(5px);
+}
+
+.cta {
+  margin-top: 4rem;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.ctaText {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  letter-spacing: 0.3px;
+  line-height: 1.5;
+}
+
+.ctaText strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .howSection {
+    padding: 6rem 1.5rem;
+  }
+  
+  .title {
+    font-size: 3rem;
+  }
+  
   .steps {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
   }
+  
   .step {
-    width: 98vw;
-    min-width: 0;
-    margin-bottom: 0;
+    padding: 2rem 1.5rem;
   }
+  
+  .arrow {
+    display: none; /* Hide arrows on 2x2 grid */
+  }
+}
+
+@media (max-width: 768px) {
+  .howSection {
+    padding: 5rem 1rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .step {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .step:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  .icon {
+    font-size: 3rem;
+    margin: 1rem 0;
+  }
+  
+  .stepTitle {
+    font-size: 1.25rem;
+  }
+  
+  .stepDesc {
+    font-size: 0.95rem;
+  }
+  
+  .cta {
+    margin-top: 3rem;
+    padding: 1.5rem;
+  }
+  
+  .ctaText {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .howSection {
+    padding: 4rem 0.75rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .step {
+    padding: 1.5rem 1rem;
+  }
+  
+  .stepNumber {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .icon {
+    font-size: 2.5rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .step {
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .stepNumber {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+  }
+  
+  .stepTitle {
+    color: #ffffff;
+  }
+  
+  .stepDesc {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .step,
+  .icon,
+  .arrow,
+  .howSection::after {
+    animation: none;
+    transition: none;
+  }
+  
+  .step:hover,
+  .step:hover .icon {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .howSection {
+    background: #ffffff;
+    color: #000000;
+    padding: 2rem;
+  }
+  
+  .step {
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .stepNumber {
+    background: #000000;
+    color: #ffffff;
+  }
+  
+  .stepTitle {
+    color: #000000;
+  }
+  
+  .stepDesc {
+    color: #333333;
+  }
+  
   .arrow {
     display: none;
   }

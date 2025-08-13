@@ -1,77 +1,320 @@
+/* BenefitsSection.module.css */
+
 .benefitsSection {
-  padding: 60px 0 35px 0;
-  background: linear-gradient(90deg, #fff 60%, #f7f9fb 100%);
-  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #f7f9fb 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefitsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(25, 118, 210, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(3, 40, 88, 0.02) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .title {
-  color: #1976d2;
-  font-size: 1.7rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 34px;
-  letter-spacing: 1px;
+  color: #032858;
+  text-align: center;
+  margin-bottom: 4rem;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #1976d2, #032858);
+  border-radius: 2px;
 }
 
 .cards {
-  display: flex;
-  gap: 28px;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 coloane egale */
+  gap: 1.5rem; /* Gap mai mic pentru a încăpea toate */
+  max-width: 1400px; /* Mărește max-width */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .card {
-  background: var(--color-card, #fff);
-  border-radius: 16px;
-  box-shadow: 0 2px 16px #1976d222;
-  padding: 34px 22px 27px 22px;
-  width: 260px;
-  min-width: 210px;
+  background: #ffffff;
+  padding: 2rem 1.5rem; /* Padding redus pentru spațiu */
+  border-radius: 20px;
+  border: 1px solid rgba(25, 118, 210, 0.08);
+  box-shadow: 0 4px 32px rgba(25, 118, 210, 0.08);
+  transition: all 0.4s cubic-bezier(0.28, 0.8, 0.32, 1.25);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.8s cubic-bezier(0.28, 0.8, 0.32, 1.25) forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  min-height: 320px; /* Înălțime minimă pentru uniformitate */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: box-shadow 0.19s, transform 0.16s;
-  animation: fadeInUp 0.55s cubic-bezier(.28,.8,.32,1.25) both;
-}
-
-.card:hover {
-  box-shadow: 0 6px 36px #1976d244;
-  transform: translateY(-4px) scale(1.045);
-}
-
-.icon {
-  font-size: 2.4rem;
-  margin-bottom: 16px;
-  color: #1976d2;
 }
 
 .cardTitle {
-  font-size: 1.15rem;
+  font-size: 1.25rem; /* Font mai mic pentru a încăpea */
   font-weight: 700;
   color: #032858;
-  margin-bottom: 10px;
-  letter-spacing: 0.6px;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
 }
 
 .cardDesc {
+  font-size: 0.9rem; /* Font mai mic pentru descriere */
   color: #555;
-  font-size: 1rem;
-  opacity: 0.93;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  flex-grow: 1; /* Permite descrierii să umple spațiul disponibil */
 }
 
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1976d2, #032858);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.28, 0.8, 0.32, 1.25);
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 12px 48px rgba(25, 118, 210, 0.15);
+  border-color: rgba(25, 118, 210, 0.2);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(25, 118, 210, 0.1), rgba(3, 40, 88, 0.05));
+  border-radius: 20px;
+  border: 2px solid rgba(25, 118, 210, 0.1);
+  transition: all 0.3s cubic-bezier(0.28, 0.8, 0.32, 1.25);
+}
+
+.card:hover .icon {
+  background: linear-gradient(135deg, rgba(25, 118, 210, 0.15), rgba(3, 40, 88, 0.08));
+  border-color: rgba(25, 118, 210, 0.2);
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Animations */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(22px) scale(0.98); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@media (max-width: 900px) {
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 17px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .benefitsSection {
+    padding: 5rem 1.5rem;
   }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 pe tablet */
+    gap: 2rem;
+    max-width: 800px;
+  }
+  
   .card {
-    width: 98vw;
-    min-width: 0;
-    padding: 24px 8px 18px 8px;
+    padding: 2rem;
+    min-height: 280px;
+  }
+  
+  .cardTitle {
+    font-size: 1.35rem;
+  }
+  
+  .cardDesc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefitsSection {
+    padding: 4rem 1rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .cards {
+    grid-template-columns: 1fr; /* Stack pe mobile */
+    gap: 1.5rem;
+  }
+  
+  .card {
+    min-height: auto;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px) scale(1.01);
+  }
+  
+  .icon {
+    width: 70px;
+    height: 70px;
+    font-size: 2.5rem;
+    border-radius: 16px;
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+  
+  .cardDesc {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefitsSection {
+    padding: 3rem 0.75rem;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cards {
+    gap: 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .card {
+    border: 2px solid #032858;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .icon {
+    background: #ffffff;
+    border: 2px solid #032858;
+  }
+  
+  .cardDesc {
+    color: #000000;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .icon,
+  .card::before {
+    animation: none;
+    transition: none;
+  }
+  
+  .card:hover,
+  .card:hover .icon {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .benefitsSection {
+    background: #ffffff;
+    padding: 2rem;
+  }
+  
+  .card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .icon {
+    background: #f5f5f5;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .benefitsSection {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d1117 100%);
+  }
+  
+  .title {
+    color: #ffffff;
+  }
+  
+  .card {
+    background: #21262d;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3);
+  }
+  
+  .cardTitle {
+    color: #ffffff;
+  }
+  
+  .cardDesc {
+    color: #8b949e;
+  }
+  
+  .icon {
+    background: rgba(25, 118, 210, 0.2);
+    border-color: rgba(25, 118, 210, 0.3);
   }
 }

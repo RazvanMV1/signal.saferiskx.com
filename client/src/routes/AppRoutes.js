@@ -2,8 +2,12 @@ import { Routes, Route } from 'react-router-dom';
 import LandingPage from '../pages/LandingPage';
 import RegisterPage from '../features/auth/pages/RegisterPage';
 import LoginPage from '../features/auth/pages/LoginPage';
-import ForgotPasswordForm from '../features/auth/components/ForgotPasswordForm';
-import DashboardPage from '../features/dashboard/pages/DashboardPage';
+import ForgotPasswordPage from '../features/auth/pages/ForgotPasswordPage';
+import DiscordServiceCard from '../features/discord-service/DiscordServiceCard';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import RiskDisclosure from '../pages/RiskDisclosure';
+import Terms from '../pages/termsComponent';
+
 
 export default function SignalRoutes() {
   return (
@@ -11,8 +15,11 @@ export default function SignalRoutes() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/forgot-password" element={<ForgotPasswordForm />} />
-      <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      <Route path="/dashboard" element={<DiscordServiceCard />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/risk-disclosure" element={<RiskDisclosure />} />
       {/* Add more routes as needed */}
     </Routes>
   );
