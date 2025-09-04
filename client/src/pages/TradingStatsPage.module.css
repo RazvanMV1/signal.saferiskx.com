@@ -1,0 +1,57 @@
+/* src/pages/TradingStatsPage.module.css */
+
+.pageContainer {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.headerSection {
+  /* Header-ul va avea background transparent pentru a se integra */
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+.contentSection {
+  flex: 1;
+  /* Elimină padding-ul de la DailyTradingStats pentru a evita dublarea */
+  margin: 0;
+  padding: 0;
+}
+
+.footerSection {
+  /* Footer-ul va avea același background ca și pagina */
+  background: transparent;
+  margin-top: 0;
+}
+
+/* Asigură-te că nu există spații între secțiuni */
+.pageContainer > * {
+  margin: 0;
+}
+
+/* Override pentru componenta DailyTradingStats */
+.pageContainer .contentSection :global(.container) {
+  padding-top: 0;
+  padding-bottom: 24px;
+  margin: 0;
+}
+
+/* Stiluri pentru header transparent */
+.pageContainer .headerSection {
+  padding: 16px 24px;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Stiluri pentru footer transparent */
+.pageContainer .footerSection {
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}

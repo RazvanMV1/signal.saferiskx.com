@@ -7,6 +7,7 @@ import DiscordServiceCard from '../features/discord-service/DiscordServiceCard';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import RiskDisclosure from '../pages/RiskDisclosure';
 import Terms from '../pages/termsComponent';
+import TradingStatsPage from '../pages/TradingStatsPage';
 
 
 export default function SignalRoutes() {
@@ -20,6 +21,7 @@ export default function SignalRoutes() {
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
       <Route path="/risk-disclosure" element={<RiskDisclosure />} />
+      <Route path="/trading-stats" element={<TradingStatsPage />} />
       {/* Add more routes as needed */}
     </Routes>
   );
